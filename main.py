@@ -16,8 +16,6 @@ ini_x = None
 ini_y = None
 fim_x = None
 fim_y = None
-#canvas.bind('<ButtonPress-1>',inicia_linha)
-#canvas.bind('<B1-Motion>',)
-#canvas.bind('<ButtonRelease-1>',)
+
             
 janela.mainloop()
