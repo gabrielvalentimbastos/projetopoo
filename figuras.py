@@ -1,63 +1,83 @@
 class Figura:
-    def __init__(self, valores, cor_borda, cor_preenchimento):
-        self.valores = valores  # esses valores aq sao as coordenadas
+    def __init__(self, começo_x, começo_y, cor_borda, cor_preenchimento):
+        self.x1 = começo_x
+        self.y1 = começo_y
+        self.x2 = começo_x
+        self.y2 =  começo_y 
         self.cor_borda = cor_borda
         self.cor_preenchimento = cor_preenchimento
 
-    def desenhar(self, canvas):
-        pass
-
-    def desenhar_tracejado(self, canvas):
+    def atualizar(self, x, y):
+        self.x2 = x
+        self.y2 = y
+    
+    def incompleta(self):
+        return (self.x1, self.y1) == (self.x2, self.y2)
+    
+    def desenhar(self, canvas, rascunho=False):
         pass
 
 
 class Linha(Figura):
-    def desenhar(self, canvas):
-        canvas.create_line(self.valores[0], self.valores[1], self.valores[2], self.valores[3], fill=self.cor_borda)
-
-    def desenhar_tracejado(self, canvas):
-        canvas.create_line(self.valores[0], self.valores[1], self.valores[2], self.valores[3], dash=(4, 2), fill=self.cor_borda)
-
+    def desenhar(self, canvas, rascunho = False):
+        dash_padrao = (4,2) if rascunho else None
+        canvas.create_line(self.x1, self.y1, self.x2, self.y2, fill=self.cor_borda, dash=dash_padrao)
 
 class Rabisco(Figura):
-    def desenhar(self, canvas):
-        canvas.create_line(self.valores, fill=self.cor_borda)
+    def __init__(self, começo_x, começo_y, cor_borda, cor_preenchimento):
+        super().__init__(começo_x, começo_y, cor_borda, cor_preenchimento)
+        self.pontos = [(começo_x,começo_y)]
 
-    def desenhar_tracejado(self, canvas):
-        canvas.create_line(self.valores, dash=(4, 2), fill=self.cor_borda)
+    def atualizar(self, x, y):
+        self.pontos.append((x, y))
 
-
-class Oval(Figura):
-    def desenhar(self, canvas):
-        canvas.create_oval(self.valores[0], self.valores[1], self.valores[2], self.valores[3], 
-                           outline=self.cor_borda, fill=self.cor_preenchimento)
-
-    def desenhar_tracejado(self, canvas):
-        canvas.create_oval(self.valores[0], self.valores[1], self.valores[2], self.valores[3], 
-                           dash=(4, 2), outline=self.cor_borda, fill=self.cor_preenchimento)
-
-
-class Circulo(Oval):
-    # o tamanho mexe la na parte do movimento do mouse, de resto é igual ao oval
-    pass
-
+    def incompleta(self):
+        return len(self.pontos) <= 1
+    
+    def desenhar(self, canvas, rascunho=False):
+        dash_padrao = (4,2) if rascunho else None
+        if len(self.pontos) > 1:
+            coords = [coord for ponto in self.pontos for coord in ponto]
+            canvas.create_line(coords, fill=self.cor_borda, dash=dash_padrao)    
 
 class Retangulo(Figura):
-    def desenhar(self, canvas):
-        canvas.create_rectangle(self.valores[0], self.valores[1], self.valores[2], self.valores[3], 
-                                 outline=self.cor_borda, fill=self.cor_preenchimento)
-
-    def desenhar_tracejado(self, canvas):
-        canvas.create_rectangle(self.valores[0], self.valores[1], self.valores[2], self.valores[3], 
-                                 dash=(4, 2), outline=self.cor_borda, fill=self.cor_preenchimento)
-
+    def desenhar(self, canvas, rascunho=False):
+        dash_padrao = (4, 2) if rascunho else None
+        canvas.create_rectangle(self.x1, self.y1, self.x2, self.y2, 
+                                outline=self.cor_borda, fill=self.cor_preenchimento, dash=dash_padrao)
 
 class Poligono(Figura):
-    def desenhar(self, canvas):
-        # os poligonos usam os valores, tipo oq usamos no rabisco
-        if len(self.valores) > 2:
-            canvas.create_polygon(self.valores, outline=self.cor_borda, fill=self.cor_preenchimento)
+    def __init__(self, começo_x, começo_y, cor_borda, cor_preenchimento):
+        super().__init__(começo_x, começo_y, cor_borda, cor_preenchimento)
+        self.pontos = [(começo_x,começo_y)]
+    
+    def atualizar(self, x, y):
+        self.pontos.append((x, y))
 
-    def desenhar_tracejado(self, canvas):
-        if len(self.valores) > 1:
-            canvas.create_line(self.valores, dash=(4, 2), fill=self.cor_borda)
+    def incompleta(self):
+        return len(self.pontos) < 3
+
+    def desenhar(self, canvas, rascunho=False):
+        dash_padrao = (4, 2) if rascunho else None
+        
+        if len(self.pontos) > 0:
+            coordenadas = [coord for ponto in self.pontos for coord in ponto]
+            if len(self.pontos) >= 3:
+                canvas.create_polygon(coordenadas, outline=self.cor_borda, fill=self.cor_preenchimento, dash=dash_padrao)
+            elif len(self.pontos) > 1:
+                canvas.create_line(coordenadas,fill=self.cor_borda, dash=dash_padrao)
+
+class Oval(Figura):
+    def desenhar(self, canvas, rascunho=False):
+        dash_padrao = dash_padrao = (4,2) if rascunho else None
+        canvas.create_oval(self.x1, self.y1, self.x2, self.y2, 
+                           outline=self.cor_borda, fill=self.cor_preenchimento, dash = dash_padrao)
+
+class Circulo(Oval):
+    def atualizar(self, x, y):
+        largura = abs(x - self.x1)
+        altura = abs(y - self.y1)
+        tamanho = max(largura, altura)
+        
+        self.x2 = self.x1 + tamanho if x >= self.x1 else self.x1 - tamanho
+        self.y2 = self.y1 + tamanho if y >= self.y1 else self.y1 - tamanho
