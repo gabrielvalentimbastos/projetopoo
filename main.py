@@ -92,4 +92,4 @@ class AppDesenho():
 if __name__ == "__main__":
     root = Tk()
     app = AppDesenho(root)
-    app.mainloop()
+    root.mainloop()
