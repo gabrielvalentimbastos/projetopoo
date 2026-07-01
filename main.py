@@ -5,18 +5,18 @@ from figuras import Linha, Rabisco, Oval, Circulo, Retangulo, Poligono
 
 #******* MAIN *******#
 class AppDesenho():
-    def __init__(self,root):
+    def __init__(self, root):
         self.figuras = []       # Todas as figuras desenhadas
         self.figura_nova = None # Figura que está sendo desenhada, mas ainda não foi incluída em figuras
         self.cor_borda_atual = 'black'
         self.cor_preenchimento_atual = ""
         self.root = root
-        self.root.title('Paint')
+        self.root.title('Paint da shopee')
         self.interface()
 
     def interface(self):    
         
-        frame = Frame(root)
+        frame = Frame(self.root)
 
         # Widgets arranjados com Layout grid dentro de frame
         paddings = {'padx': 5, 'pady': 5} 
@@ -46,19 +46,20 @@ class AppDesenho():
         self.canvas.bind('<ButtonRelease-1>', self.incluir_figura_nova)
 
     def iniciar_figura_nova(self, event): 
+        x,y = event.x, event.y
 
         if self.tipo_figura_var.get() == 'Linha':
-            figura_nova = Linha((event.x, event.y, event.x, event.y),self.cor_borda_atual,self.cor_preenchimento_atual)
+            self.figura_nova = Linha(x, y, self.cor_borda_atual,self.cor_preenchimento_atual)
         elif self.tipo_figura_var.get() == 'Oval':
-            figura_nova = Oval((event.x, event.y, event.x, event.y),self.cor_borda_atual,self.cor_preenchimento_atual)
+            self.figura_nova = Oval(x, y, self.cor_borda_atual,self.cor_preenchimento_atual)
         elif self.tipo_figura_var.get() == 'Circulo':
-            figura_nova = Circulo((event.x, event.y, event.x, event.y),self.cor_borda_atual,self.cor_preenchimento_atual)
+            self.figura_nova = Circulo(x, y, self.cor_borda_atual,self.cor_preenchimento_atual)
         elif self.tipo_figura_var.get() == 'Retangulo':
-            figura_nova = Retangulo((event.x, event.y, event.x, event.y),self.cor_borda_atual,self.cor_preenchimento_atual)
+            self.figura_nova = Retangulo(x, y, self.cor_borda_atual,self.cor_preenchimento_atual)
         elif self.tipo_figura_var.get() == 'Poligono':
-            figura_nova = Poligono([(event.x, event.y)],self.cor_borda_atual, self.cor_preenchimento_atual)
+            self.figura_nova = Poligono(x, y, self.cor_borda_atual, self.cor_preenchimento_atual)
         else:
-            figura_nova = Rabisco([(event.x, event.y)],self.cor_borda_atual,self.cor_preenchimento_atual)
+            self.figura_nova = Rabisco(x, y, self.cor_borda_atual,self.cor_preenchimento_atual)
 
     # Quando mouse é movido com o botão pressionado
     def atualizar_figura_nova(self,event):
