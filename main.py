@@ -13,6 +13,8 @@ def iniciar_figura_nova(event):
         figura_nova = ("circulo", (event.x, event.y, event.x, event.y),cor_borda_atual,cor_preenchimento_atual)
     elif tipo_figura_var.get() == 'Retangulo':
         figura_nova = ("retangulo", (event.x, event.y, event.x, event.y),cor_borda_atual,cor_preenchimento_atual)
+    elif tipo_figura_var.get() == 'Poligono':
+        figura_nova = ("poligono", [(event.x, event.y)],cor_borda_atual, cor_preenchimento_atual)
     else:
         figura_nova = ("rabisco", [(event.x, event.y)],cor_borda_atual,cor_preenchimento_atual)
 
@@ -20,7 +22,7 @@ def iniciar_figura_nova(event):
 def atualizar_figura_nova(event):
     global figura_nova
     
-    if figura_nova[0] == "rabisco":
+    if figura_nova[0] in ["rabisco", "poligono"]:
         figura_nova[1].append((event.x, event.y))
         figura_nova = (figura_nova[0], figura_nova[1], figura_nova[2], figura_nova[3])
     elif figura_nova[0] == "circulo":
@@ -30,7 +32,7 @@ def atualizar_figura_nova(event):
         x_final = figura_nova[1][0] + tamanho if event.x >= figura_nova[1][0] else figura_nova[1][0] - tamanho
         y_final = figura_nova[1][1] + tamanho if event.y >= figura_nova[1][1] else figura_nova[1][1] - tamanho
         figura_nova = (figura_nova[0], (figura_nova[1][0], figura_nova[1][1], x_final, y_final), figura_nova[2], figura_nova[3])
-    else: # figura_nova[0] == 'linha', 'circulo' ou 'retângulo'
+    else: # figura_nova[0] == 'linha', 'oval' ou 'retângulo'
         figura_nova = (figura_nova[0], (figura_nova[1][0], figura_nova[1][1], event.x, event.y),figura_nova[2],figura_nova[3])
     desenhar_figuras()
     desenhar_figura_nova()
@@ -52,6 +54,11 @@ def desenhar_figuras():
             canvas.create_oval(values[0], values[1], values[2], values[3],outline=cor_borda,fill=cor_preenche)
         elif fig == "retangulo":
             canvas.create_rectangle(values[0], values[1], values[2], values[3],outline=cor_borda,fill=cor_preenche)
+        elif fig == "poligono":
+            if len(values) >= 3:
+                canvas.create_polygon(values, outline=cor_borda, fill=cor_preenche)
+            else:
+                canvas.create_line(values, fill=cor_borda)
         else: # fig == "rabisco"
             canvas.create_line(values,fill=cor_borda)
 
@@ -65,6 +72,11 @@ def desenhar_figura_nova():
         canvas.create_oval(values[0], values[1], values[2], values[3], dash=(4, 2),outline=cor_borda,fill=cor_preenche)
     elif fig == "retangulo":
         canvas.create_rectangle(values[0], values[1], values[2], values[3], dash=(4, 2),outline=cor_borda,fill=cor_preenche)
+    elif fig == "poligono":
+        if len(values) >= 3:
+            canvas.create_polygon(values, dash=(4, 2), outline=cor_borda, fill=cor_preenche)
+        else:
+            canvas.create_line(values, dash=(4, 2), fill=cor_borda)
     else: # fig == "rabisco"
         canvas.create_line(values, dash=(4, 2))
 
@@ -72,6 +84,8 @@ def incompleta(figura):
     fig, values,cor_borda,cor_preenche = figura
     if fig in ["linha", "oval", "circulo", "retangulo"]:
         return (values[0], values[1]) == (values[2], values[3])
+    elif fig == "poligono":
+        return len(values) < 3
     else: # fig == "rabisco"
         return len(values) <= 1
 def escolher_cor_borda():
@@ -105,15 +119,15 @@ label.grid(column=0, row=0, sticky=W, **paddings)
 # option menu 
 tipo_figura_var = StringVar(root)
 option_menu = ttk.OptionMenu(frame, tipo_figura_var,
-                              'Linha', 'Linha', 'Rabisco', 'Oval', 'Circulo', 'Retangulo')
+                              'Linha', 'Linha', 'Rabisco', 'Oval', 'Circulo', 'Retangulo', 'Poligono')
 option_menu.grid(column=1, row=0, sticky=W, **paddings)
 botao_borda = ttk.Button(frame,text='Cor da borda',command=escolher_cor_borda)
 botao_borda.grid(column=2,row=0,sticky=W,**paddings)
 botao_preenche = ttk.Button(frame,text='Cor de preenchimento',command=escolher_cor_preenchimento)
-botao_preenche.grid(column=3,row=0,sticky=W,**paddings)
+botao_preenche.grid(column=2,row=1,sticky=W,**paddings)
 # Área de desenho
-canvas = Canvas(frame, bg='white', width=600, height=600)
-canvas.grid(column=0, row=1, columnspan=2, sticky=W, **paddings)
+canvas = Canvas(frame, bg='white', width=1270, height=700)
+canvas.grid(column=0, row=2, columnspan=4, sticky=W, **paddings)
 
 frame.pack()
 
