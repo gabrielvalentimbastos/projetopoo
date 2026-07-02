@@ -30,6 +30,14 @@ class AppDesenho():
         option_menu = ttk.OptionMenu(frame, self.tipo_figura_var,
                                 'Linha', 'Linha', 'Rabisco', 'Oval', 'Circulo', 'Retangulo', 'Poligono')
         option_menu.grid(column=1, row=0, sticky=W, **paddings)
+        
+        self.lados_poligono_var = StringVar(self.root)
+        self.menu_lados = ttk.OptionMenu(frame, self.lados_poligono_var,
+                                         'Triangulo (3 lados)', 'Triangulo (3 lados)', 
+                                         'Losango (4 lados)', 'Pentagono (5 lados)', 'Hexagono (6 lados)')
+        
+        self.tipo_figura_var.trace_add("write", self.verificar_exibicao_poligono) #esse write aqui é pra fazer aparecer o menu se chamar a funcao dos poligonos, se n chamar ele é ocultado
+        
         botao_borda = ttk.Button(frame,text='Cor da borda',command=self.escolher_cor_borda)
         botao_borda.grid(column=2,row=0,sticky=W,**paddings)
         botao_preenche = ttk.Button(frame,text='Cor de preenchimento',command=self.escolher_cor_preenchimento)
@@ -45,6 +53,12 @@ class AppDesenho():
         self.canvas.bind('<B1-Motion>', self.atualizar_figura_nova)
         self.canvas.bind('<ButtonRelease-1>', self.incluir_figura_nova)
 
+    def verificar_exibicao_poligono(self, *args):
+        if self.tipo_figura_var.get() == 'Poligono':
+            self.menu_lados.grid(column=1, row=1, sticky=W, padx=5, pady=5)
+        else:
+            self.menu_lados.grid_forget()
+
     def iniciar_figura_nova(self, event): 
         x,y = event.x, event.y
 
@@ -57,7 +71,17 @@ class AppDesenho():
         elif self.tipo_figura_var.get() == 'Retangulo':
             self.figura_nova = Retangulo(x, y, self.cor_borda_atual,self.cor_preenchimento_atual)
         elif self.tipo_figura_var.get() == 'Poligono':
+            texto_lados = self.lados_poligono_var.get()
+            if 'Triangulo' in texto_lados:
+                lados = 3
+            elif 'Losango' in texto_lados:
+                lados = 4
+            elif 'Pentagono' in texto_lados:
+                lados = 5
+            else:
+                lados = 6
             self.figura_nova = Poligono(x, y, self.cor_borda_atual, self.cor_preenchimento_atual)
+            self.figura_nova.max_lados = lados
         else:
             self.figura_nova = Rabisco(x, y, self.cor_borda_atual,self.cor_preenchimento_atual)
 
