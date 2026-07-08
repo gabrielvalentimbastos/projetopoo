@@ -36,7 +36,7 @@ class ControladorDesenho:
             self.cor_preenchimento_atual = os_cor
 
     def iniciar_figura_nova(self, event): 
-        from projetopoo.modelo.figuras import Linha, Rabisco, Oval, Circulo, Retangulo, Poligono
+        from modelo.figuras import Linha, Rabisco, Oval, Circulo, Retangulo, Poligono
         x, y = event.x, event.y
         tipo = self.visao.tipo_figura_var.get()
 
