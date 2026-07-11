@@ -19,6 +19,9 @@ class ControladorDesenho:
         self.visao.canvas.bind('<B1-Motion>', self.atualizar_figura_nova)
         self.visao.canvas.bind('<ButtonRelease-1>', self.incluir_figura_nova)
 
+        self.visao.botao_salvar.config(command=self.salvar_desenho)
+        self.visao.botao_abrir.config(command=self.abrir_desenho)
+
     def verificar_exibicao_poligono(self, *args):
         if self.visao.tipo_figura_var.get() == 'Poligono':
             self.visao.menu_lados.grid(column=1, row=1, sticky='w', padx=5, pady=5)
@@ -73,3 +76,22 @@ class ControladorDesenho:
             self.modelo.adicionar_figura(self.modelo.figura_nova)
         self.modelo.limpar_figura_nova()
         self.visao.atualizar_canvas(self.modelo)
+
+    def salvar_desenho(self):
+        caminho = self.visao.pedir_caminho_salvar()
+        if caminho:
+            try:
+                self.modelo.salvar_em_arquivo(caminho)
+                self.visao.mostrar_mensagem("Sucesso", "Seu desenho foi salvo com sucesso!")
+            except Exception as erro:
+                self.visao.mostrar_erro("Erro ao salvar", f"Não foi possível salvar:\n{erro}")
+
+    def abrir_desenho(self):
+        caminho = self.visao.pedir_caminho_abrir()
+        if caminho:
+            try:
+                self.modelo.carregar_de_arquivo(caminho)
+                self.visao.atualizar_canvas(self.modelo) 
+                self.visao.mostrar_mensagem("Sucesso", "Desenho carregado com sucesso!")
+            except Exception as erro:
+                self.visao.mostrar_erro("Erro ao abrir", f"Arquivo inválido:\n{erro}")

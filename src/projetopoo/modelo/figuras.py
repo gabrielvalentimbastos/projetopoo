@@ -1,4 +1,5 @@
 import math
+import pickle
 
 class Figura:
     def __init__(self, começo_x, começo_y, cor_borda, cor_preenchimento):
@@ -115,3 +116,13 @@ class Desenho: # essa parte aqui gerencia os dados das figuras
 
     def limpar_figura_nova(self):
         self.figura_nova = None
+    
+    def salvar_em_arquivo(self, caminho_arquivo):
+        #Salva a lista atual de figuras no computador.
+        with open(caminho_arquivo, 'wb') as arquivo:
+            pickle.dump(self.figuras, arquivo)
+
+    def carregar_de_arquivo(self, caminho_arquivo):
+        #Lê o arquivo e substitui as figuras atuais.
+        with open(caminho_arquivo, 'rb') as arquivo:
+            self.figuras = pickle.load(arquivo)

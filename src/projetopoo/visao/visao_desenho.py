@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import filedialog, messagebox
 
 class VisaoDesenho:
     def __init__(self, root):
@@ -35,6 +36,12 @@ class VisaoDesenho:
         self.botao_preenche = ttk.Button(frame, text='Cor de preenchimento')
         self.botao_preenche.grid(column=2, row=1, sticky=W, **paddings)
         
+        self.botao_salvar = ttk.Button(frame, text='Salvar Desenho')
+        self.botao_salvar.grid(column=3, row=0, sticky=W, **paddings)
+
+        self.botao_abrir = ttk.Button(frame, text='Abrir Desenho')
+        self.botao_abrir.grid(column=3, row=1, sticky=W, **paddings)
+
         # Área de desenho
         self.canvas = Canvas(frame, bg='white', width=1270, height=700)
         self.canvas.grid(column=0, row=2, columnspan=4, sticky=W, **paddings)
@@ -52,3 +59,27 @@ class VisaoDesenho:
         # Desenha o rascunho temporário
         if modelo.figura_nova:
             modelo.figura_nova.desenhar(self.canvas, rascunho=True)
+    
+    def pedir_caminho_salvar(self):
+        #Abre a janela do Windows perguntando onde salvar.
+        return filedialog.asksaveasfilename(
+            title="Salvar Desenho",
+            defaultextension=".pnt",
+            filetypes=[("Paint da Shopee", "*.pnt"), ("Todos os Arquivos", "*.*")]
+        )
+
+    def pedir_caminho_abrir(self):
+        #Abre a janela do Windows perguntando qual arquivo abrir.
+        return filedialog.askopenfilename(
+            title="Abrir Desenho",
+            defaultextension=".pnt",
+            filetypes=[("Paint da Shopee", "*.pnt"), ("Todos os Arquivos", "*.*")]
+        )
+
+    def mostrar_mensagem(self, titulo, mensagem):
+        #Mostra um pop-up de sucesso na tela.
+        messagebox.showinfo(titulo, mensagem)
+
+    def mostrar_erro(self, titulo, mensagem):
+        #Mostra um pop-up de erro na tela.
+        messagebox.showerror(titulo, mensagem)
