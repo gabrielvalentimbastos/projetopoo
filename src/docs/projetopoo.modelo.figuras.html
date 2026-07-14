@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module projetopoo.modelo.figuras</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="projetopoo.html" class="white">projetopoo</a>.<a href="projetopoo.modelo.html" class="white">modelo</a>.figuras</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cgabri%5Cdocuments%5Cprojetopoo%5Cprojetopoo%5Csrc%5Cprojetopoo%5Cmodelo%5Cfiguras.py">c:\users\gabri\documents\projetopoo\projetopoo\src\projetopoo\modelo\figuras.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;responsável&nbsp;pelas&nbsp;classes&nbsp;de&nbsp;representação&nbsp;das&nbsp;figuras&nbsp;geométricas&nbsp;e&nbsp;gerência&nbsp;de&nbsp;dados.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>
+@since&nbsp;2026-07-13</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="math.html">math</a><br>
+</td><td class="multicolumn"><a href="pickle.html">pickle</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="projetopoo.modelo.figuras.html#Desenho">Desenho</a>
+</dt><dt class="heading-text"><a href="projetopoo.modelo.figuras.html#Figura">Figura</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="projetopoo.modelo.figuras.html#Linha">Linha</a>
+</dt><dt class="heading-text"><a href="projetopoo.modelo.figuras.html#Oval">Oval</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="projetopoo.modelo.figuras.html#Circulo">Circulo</a>
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="projetopoo.modelo.figuras.html#Poligono">Poligono</a>
+</dt><dt class="heading-text"><a href="projetopoo.modelo.figuras.html#Rabisco">Rabisco</a>
+</dt><dt class="heading-text"><a href="projetopoo.modelo.figuras.html#Retangulo">Retangulo</a>
+</dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Circulo">class <strong>Circulo</strong></a>(<a href="projetopoo.modelo.figuras.html#Oval">Oval</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Circulo">Circulo</a>(começo_x,&nbsp;começo_y,&nbsp;cor_borda,&nbsp;cor_preenchimento)<br>
+&nbsp;<br>
+Representa&nbsp;uma&nbsp;forma&nbsp;geométrica&nbsp;perfeitamente&nbsp;circular&nbsp;de&nbsp;raio&nbsp;uniforme.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>
+@see&nbsp;<a href="#Oval">Oval</a><br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.modelo.figuras.html#Circulo">Circulo</a></dd>
+<dd><a href="projetopoo.modelo.figuras.html#Oval">Oval</a></dd>
+<dd><a href="projetopoo.modelo.figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Circulo-atualizar"><strong>atualizar</strong></a>(self, x, y)</dt><dd><span class="code">Ajusta&nbsp;a&nbsp;altura&nbsp;e&nbsp;largura&nbsp;para&nbsp;que&nbsp;permaneçam&nbsp;iguais,&nbsp;garantindo&nbsp;a&nbsp;proporcionalidade&nbsp;circular.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;limite&nbsp;de&nbsp;arraste.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;limite&nbsp;de&nbsp;arraste.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="projetopoo.modelo.figuras.html#Oval">Oval</a>:<br>
+<dl><dt><a name="Circulo-desenhar"><strong>desenhar</strong></a>(self, canvas, rascunho=False)</dt><dd><span class="code">Renderiza&nbsp;a&nbsp;elipse&nbsp;no&nbsp;canvas.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter.<br>
+@param&nbsp;rascunho:&nbsp;Define&nbsp;se&nbsp;a&nbsp;borda&nbsp;provisória&nbsp;será&nbsp;pontilhada.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="projetopoo.modelo.figuras.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Circulo-__init__"><strong>__init__</strong></a>(self, começo_x, começo_y, cor_borda, cor_preenchimento)</dt><dd><span class="code">Construtor&nbsp;da&nbsp;classe&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;começo_x:&nbsp;Coordenada&nbsp;X&nbsp;inicial&nbsp;do&nbsp;ponto&nbsp;de&nbsp;partida.<br>
+@param&nbsp;começo_y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial&nbsp;do&nbsp;ponto&nbsp;de&nbsp;partida.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;de&nbsp;contorno&nbsp;da&nbsp;figura&nbsp;(padrão&nbsp;hexadecimal&nbsp;ou&nbsp;nome&nbsp;de&nbsp;cor).<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;interna&nbsp;de&nbsp;preenchimento&nbsp;(string&nbsp;vazia&nbsp;se&nbsp;transparente).</span></dd></dl>
+
+<dl><dt><a name="Circulo-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;a&nbsp;figura&nbsp;possui&nbsp;dimensões&nbsp;nulas&nbsp;(ponto&nbsp;inicial&nbsp;idêntico&nbsp;ao&nbsp;final).<br>
+&nbsp;<br>
+@return:&nbsp;True&nbsp;se&nbsp;a&nbsp;figura&nbsp;estiver&nbsp;incompleta&nbsp;(tamanho&nbsp;zero),&nbsp;False&nbsp;caso&nbsp;contrário.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.modelo.figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Desenho">class <strong>Desenho</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Classe&nbsp;de&nbsp;modelo&nbsp;responsável&nbsp;pelo&nbsp;armazenamento&nbsp;de&nbsp;dados&nbsp;e&nbsp;persistência&nbsp;física&nbsp;de&nbsp;arquivos.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Desenho-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Construtor&nbsp;da&nbsp;classe&nbsp;de&nbsp;persistência&nbsp;e&nbsp;gerenciamento&nbsp;do&nbsp;histórico&nbsp;de&nbsp;desenhos.</span></dd></dl>
+
+<dl><dt><a name="Desenho-adicionar_figura"><strong>adicionar_figura</strong></a>(self, figura)</dt><dd><span class="code">Insere&nbsp;de&nbsp;forma&nbsp;definitiva&nbsp;uma&nbsp;nova&nbsp;figura&nbsp;concluída&nbsp;no&nbsp;histórico&nbsp;do&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;figura:&nbsp;Instância&nbsp;de&nbsp;uma&nbsp;classe&nbsp;derivada&nbsp;de&nbsp;<a href="#Figura">Figura</a>.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Desenho-carregar_de_arquivo"><strong>carregar_de_arquivo</strong></a>(self, caminho_arquivo)</dt><dd><span class="code">Carrega&nbsp;um&nbsp;arquivo&nbsp;contendo&nbsp;a&nbsp;lista&nbsp;de&nbsp;objetos&nbsp;geométricos&nbsp;serializados.<br>
+&nbsp;<br>
+@param&nbsp;caminho_arquivo:&nbsp;Caminho&nbsp;físico&nbsp;de&nbsp;leitura&nbsp;do&nbsp;arquivo.<br>
+@return:&nbsp;None<br>
+@throws&nbsp;IOError:&nbsp;Caso&nbsp;falhe&nbsp;no&nbsp;processo&nbsp;de&nbsp;leitura&nbsp;ou&nbsp;carregamento&nbsp;de&nbsp;dados&nbsp;corrompidos.</span></dd></dl>
+
+<dl><dt><a name="Desenho-limpar_figura_nova"><strong>limpar_figura_nova</strong></a>(self)</dt><dd><span class="code">Reseta&nbsp;o&nbsp;estado&nbsp;da&nbsp;variável&nbsp;de&nbsp;desenho&nbsp;ativo&nbsp;e&nbsp;temporário&nbsp;do&nbsp;canvas.<br>
+&nbsp;<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Desenho-salvar_em_arquivo"><strong>salvar_em_arquivo</strong></a>(self, caminho_arquivo)</dt><dd><span class="code">Serializa&nbsp;e&nbsp;salva&nbsp;a&nbsp;lista&nbsp;de&nbsp;figuras&nbsp;usando&nbsp;formato&nbsp;binário&nbsp;através&nbsp;da&nbsp;biblioteca&nbsp;pickle.<br>
+&nbsp;<br>
+@param&nbsp;caminho_arquivo:&nbsp;Caminho&nbsp;completo&nbsp;de&nbsp;destino&nbsp;do&nbsp;arquivo&nbsp;gravado&nbsp;no&nbsp;sistema&nbsp;operacional.<br>
+@return:&nbsp;None<br>
+@throws&nbsp;IOError:&nbsp;Dispara&nbsp;exceção&nbsp;de&nbsp;Input/Output&nbsp;se&nbsp;houver&nbsp;falhas&nbsp;de&nbsp;permissão&nbsp;de&nbsp;escrita&nbsp;física.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Figura">class <strong>Figura</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Figura">Figura</a>(começo_x,&nbsp;começo_y,&nbsp;cor_borda,&nbsp;cor_preenchimento)<br>
+&nbsp;<br>
+Classe&nbsp;abstrata&nbsp;que&nbsp;representa&nbsp;uma&nbsp;figura&nbsp;geométrica&nbsp;básica&nbsp;no&nbsp;sistema&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Figura-__init__"><strong>__init__</strong></a>(self, começo_x, começo_y, cor_borda, cor_preenchimento)</dt><dd><span class="code">Construtor&nbsp;da&nbsp;classe&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;começo_x:&nbsp;Coordenada&nbsp;X&nbsp;inicial&nbsp;do&nbsp;ponto&nbsp;de&nbsp;partida.<br>
+@param&nbsp;começo_y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial&nbsp;do&nbsp;ponto&nbsp;de&nbsp;partida.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;de&nbsp;contorno&nbsp;da&nbsp;figura&nbsp;(padrão&nbsp;hexadecimal&nbsp;ou&nbsp;nome&nbsp;de&nbsp;cor).<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;interna&nbsp;de&nbsp;preenchimento&nbsp;(string&nbsp;vazia&nbsp;se&nbsp;transparente).</span></dd></dl>
+
+<dl><dt><a name="Figura-atualizar"><strong>atualizar</strong></a>(self, x, y)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;(ponto&nbsp;de&nbsp;destino)&nbsp;da&nbsp;figura&nbsp;durante&nbsp;o&nbsp;arrasto&nbsp;do&nbsp;mouse.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;do&nbsp;ponto&nbsp;final.<br>
+@param&nbsp;y:&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;do&nbsp;ponto&nbsp;final.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Figura-desenhar"><strong>desenhar</strong></a>(self, canvas, rascunho=False)</dt><dd><span class="code">Método&nbsp;abstrato&nbsp;para&nbsp;desenhar&nbsp;a&nbsp;figura&nbsp;no&nbsp;Canvas&nbsp;do&nbsp;Tkinter.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter&nbsp;onde&nbsp;o&nbsp;desenho&nbsp;será&nbsp;renderizado.<br>
+@param&nbsp;rascunho:&nbsp;Define&nbsp;se&nbsp;a&nbsp;renderização&nbsp;deve&nbsp;ser&nbsp;feita&nbsp;com&nbsp;linhas&nbsp;tracejadas&nbsp;(visualização&nbsp;temporária).<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Figura-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;a&nbsp;figura&nbsp;possui&nbsp;dimensões&nbsp;nulas&nbsp;(ponto&nbsp;inicial&nbsp;idêntico&nbsp;ao&nbsp;final).<br>
+&nbsp;<br>
+@return:&nbsp;True&nbsp;se&nbsp;a&nbsp;figura&nbsp;estiver&nbsp;incompleta&nbsp;(tamanho&nbsp;zero),&nbsp;False&nbsp;caso&nbsp;contrário.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Linha">class <strong>Linha</strong></a>(<a href="projetopoo.modelo.figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Linha">Linha</a>(começo_x,&nbsp;começo_y,&nbsp;cor_borda,&nbsp;cor_preenchimento)<br>
+&nbsp;<br>
+Representa&nbsp;um&nbsp;segmento&nbsp;de&nbsp;reta&nbsp;bidimensional&nbsp;simples.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>
+@see&nbsp;<a href="#Figura">Figura</a><br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.modelo.figuras.html#Linha">Linha</a></dd>
+<dd><a href="projetopoo.modelo.figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Linha-desenhar"><strong>desenhar</strong></a>(self, canvas, rascunho=False)</dt><dd><span class="code">Renderiza&nbsp;a&nbsp;linha&nbsp;no&nbsp;canvas.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter.<br>
+@param&nbsp;rascunho:&nbsp;True&nbsp;para&nbsp;renderização&nbsp;pontilhada&nbsp;temporária.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="projetopoo.modelo.figuras.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Linha-__init__"><strong>__init__</strong></a>(self, começo_x, começo_y, cor_borda, cor_preenchimento)</dt><dd><span class="code">Construtor&nbsp;da&nbsp;classe&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;começo_x:&nbsp;Coordenada&nbsp;X&nbsp;inicial&nbsp;do&nbsp;ponto&nbsp;de&nbsp;partida.<br>
+@param&nbsp;começo_y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial&nbsp;do&nbsp;ponto&nbsp;de&nbsp;partida.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;de&nbsp;contorno&nbsp;da&nbsp;figura&nbsp;(padrão&nbsp;hexadecimal&nbsp;ou&nbsp;nome&nbsp;de&nbsp;cor).<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;interna&nbsp;de&nbsp;preenchimento&nbsp;(string&nbsp;vazia&nbsp;se&nbsp;transparente).</span></dd></dl>
+
+<dl><dt><a name="Linha-atualizar"><strong>atualizar</strong></a>(self, x, y)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;(ponto&nbsp;de&nbsp;destino)&nbsp;da&nbsp;figura&nbsp;durante&nbsp;o&nbsp;arrasto&nbsp;do&nbsp;mouse.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;do&nbsp;ponto&nbsp;final.<br>
+@param&nbsp;y:&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;do&nbsp;ponto&nbsp;final.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Linha-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;a&nbsp;figura&nbsp;possui&nbsp;dimensões&nbsp;nulas&nbsp;(ponto&nbsp;inicial&nbsp;idêntico&nbsp;ao&nbsp;final).<br>
+&nbsp;<br>
+@return:&nbsp;True&nbsp;se&nbsp;a&nbsp;figura&nbsp;estiver&nbsp;incompleta&nbsp;(tamanho&nbsp;zero),&nbsp;False&nbsp;caso&nbsp;contrário.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.modelo.figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Oval">class <strong>Oval</strong></a>(<a href="projetopoo.modelo.figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Oval">Oval</a>(começo_x,&nbsp;começo_y,&nbsp;cor_borda,&nbsp;cor_preenchimento)<br>
+&nbsp;<br>
+Representa&nbsp;uma&nbsp;elipse&nbsp;bidimensional&nbsp;delimitada&nbsp;pela&nbsp;sua&nbsp;caixa&nbsp;envolvente.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>
+@see&nbsp;<a href="#Figura">Figura</a><br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.modelo.figuras.html#Oval">Oval</a></dd>
+<dd><a href="projetopoo.modelo.figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Oval-desenhar"><strong>desenhar</strong></a>(self, canvas, rascunho=False)</dt><dd><span class="code">Renderiza&nbsp;a&nbsp;elipse&nbsp;no&nbsp;canvas.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter.<br>
+@param&nbsp;rascunho:&nbsp;Define&nbsp;se&nbsp;a&nbsp;borda&nbsp;provisória&nbsp;será&nbsp;pontilhada.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="projetopoo.modelo.figuras.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Oval-__init__"><strong>__init__</strong></a>(self, começo_x, começo_y, cor_borda, cor_preenchimento)</dt><dd><span class="code">Construtor&nbsp;da&nbsp;classe&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;começo_x:&nbsp;Coordenada&nbsp;X&nbsp;inicial&nbsp;do&nbsp;ponto&nbsp;de&nbsp;partida.<br>
+@param&nbsp;começo_y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial&nbsp;do&nbsp;ponto&nbsp;de&nbsp;partida.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;de&nbsp;contorno&nbsp;da&nbsp;figura&nbsp;(padrão&nbsp;hexadecimal&nbsp;ou&nbsp;nome&nbsp;de&nbsp;cor).<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;interna&nbsp;de&nbsp;preenchimento&nbsp;(string&nbsp;vazia&nbsp;se&nbsp;transparente).</span></dd></dl>
+
+<dl><dt><a name="Oval-atualizar"><strong>atualizar</strong></a>(self, x, y)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;(ponto&nbsp;de&nbsp;destino)&nbsp;da&nbsp;figura&nbsp;durante&nbsp;o&nbsp;arrasto&nbsp;do&nbsp;mouse.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;do&nbsp;ponto&nbsp;final.<br>
+@param&nbsp;y:&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;do&nbsp;ponto&nbsp;final.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Oval-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;a&nbsp;figura&nbsp;possui&nbsp;dimensões&nbsp;nulas&nbsp;(ponto&nbsp;inicial&nbsp;idêntico&nbsp;ao&nbsp;final).<br>
+&nbsp;<br>
+@return:&nbsp;True&nbsp;se&nbsp;a&nbsp;figura&nbsp;estiver&nbsp;incompleta&nbsp;(tamanho&nbsp;zero),&nbsp;False&nbsp;caso&nbsp;contrário.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.modelo.figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Poligono">class <strong>Poligono</strong></a>(<a href="projetopoo.modelo.figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Poligono">Poligono</a>(começo_x,&nbsp;começo_y,&nbsp;cor_borda,&nbsp;cor_preenchimento)<br>
+&nbsp;<br>
+Representa&nbsp;um&nbsp;polígono&nbsp;regular&nbsp;dinâmico&nbsp;equilátero&nbsp;circunscrito.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>
+@see&nbsp;<a href="#Figura">Figura</a><br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.modelo.figuras.html#Poligono">Poligono</a></dd>
+<dd><a href="projetopoo.modelo.figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Poligono-__init__"><strong>__init__</strong></a>(self, começo_x, começo_y, cor_borda, cor_preenchimento)</dt><dd><span class="code">Construtor&nbsp;da&nbsp;classe&nbsp;Polígono&nbsp;regular&nbsp;circunscrito&nbsp;por&nbsp;raio.<br>
+&nbsp;<br>
+@param&nbsp;começo_x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;ponto&nbsp;central.<br>
+@param&nbsp;começo_y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;ponto&nbsp;central.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;do&nbsp;contorno&nbsp;externo.<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;do&nbsp;preenchimento&nbsp;de&nbsp;área&nbsp;do&nbsp;polígono.</span></dd></dl>
+
+<dl><dt><a name="Poligono-atualizar"><strong>atualizar</strong></a>(self, x, y)</dt><dd><span class="code">Calcula&nbsp;matematicamente&nbsp;o&nbsp;raio&nbsp;e&nbsp;reconstrói&nbsp;as&nbsp;coordenadas&nbsp;de&nbsp;cada&nbsp;vértice.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;atual&nbsp;do&nbsp;arrasto&nbsp;do&nbsp;mouse.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;atual&nbsp;do&nbsp;arrasto&nbsp;do&nbsp;mouse.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Poligono-desenhar"><strong>desenhar</strong></a>(self, canvas, rascunho=False)</dt><dd><span class="code">Renderiza&nbsp;o&nbsp;polígono&nbsp;aplicando&nbsp;suas&nbsp;coordenadas&nbsp;de&nbsp;vértices&nbsp;calculadas.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter.<br>
+@param&nbsp;rascunho:&nbsp;Se&nbsp;True,&nbsp;renderiza&nbsp;com&nbsp;borda&nbsp;tracejada.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Poligono-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Informa&nbsp;se&nbsp;o&nbsp;polígono&nbsp;possui&nbsp;raio&nbsp;de&nbsp;valor&nbsp;equivalente&nbsp;a&nbsp;zero.<br>
+&nbsp;<br>
+@return:&nbsp;True&nbsp;se&nbsp;a&nbsp;figura&nbsp;está&nbsp;incompleta,&nbsp;False&nbsp;caso&nbsp;contrário.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.modelo.figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Rabisco">class <strong>Rabisco</strong></a>(<a href="projetopoo.modelo.figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Rabisco">Rabisco</a>(começo_x,&nbsp;começo_y,&nbsp;cor_borda,&nbsp;cor_preenchimento)<br>
+&nbsp;<br>
+Representa&nbsp;um&nbsp;desenho&nbsp;livre&nbsp;composto&nbsp;por&nbsp;múltiplos&nbsp;pontos&nbsp;conectados&nbsp;de&nbsp;forma&nbsp;sequencial.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>
+@see&nbsp;<a href="#Figura">Figura</a><br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.modelo.figuras.html#Rabisco">Rabisco</a></dd>
+<dd><a href="projetopoo.modelo.figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Rabisco-__init__"><strong>__init__</strong></a>(self, começo_x, começo_y, cor_borda, cor_preenchimento)</dt><dd><span class="code">Inicializa&nbsp;a&nbsp;estrutura&nbsp;do&nbsp;rabisco&nbsp;com&nbsp;uma&nbsp;lista&nbsp;de&nbsp;pontos&nbsp;conectados.<br>
+&nbsp;<br>
+@param&nbsp;começo_x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;ponto&nbsp;inicial.<br>
+@param&nbsp;começo_y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;ponto&nbsp;inicial.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;do&nbsp;traçado&nbsp;do&nbsp;pincel.<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;não&nbsp;aplicada&nbsp;diretamente&nbsp;neste&nbsp;tipo&nbsp;de&nbsp;traço&nbsp;livre.</span></dd></dl>
+
+<dl><dt><a name="Rabisco-atualizar"><strong>atualizar</strong></a>(self, x, y)</dt><dd><span class="code">Adiciona&nbsp;novos&nbsp;pontos&nbsp;na&nbsp;sequência&nbsp;do&nbsp;traçado&nbsp;à&nbsp;medida&nbsp;que&nbsp;o&nbsp;usuário&nbsp;arrasta&nbsp;o&nbsp;cursor.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Próxima&nbsp;coordenada&nbsp;X&nbsp;detectada.<br>
+@param&nbsp;y:&nbsp;Próxima&nbsp;coordenada&nbsp;Y&nbsp;detectada.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Rabisco-desenhar"><strong>desenhar</strong></a>(self, canvas, rascunho=False)</dt><dd><span class="code">Renderiza&nbsp;o&nbsp;traçado&nbsp;livre&nbsp;ligando&nbsp;todos&nbsp;os&nbsp;pontos&nbsp;intermediários&nbsp;coletados.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter.<br>
+@param&nbsp;rascunho:&nbsp;Define&nbsp;se&nbsp;a&nbsp;renderização&nbsp;utiliza&nbsp;visualização&nbsp;tracejada.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Rabisco-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;o&nbsp;rabisco&nbsp;contém&nbsp;pontos&nbsp;suficientes&nbsp;para&nbsp;formar&nbsp;uma&nbsp;reta&nbsp;mínima.<br>
+&nbsp;<br>
+@return:&nbsp;True&nbsp;se&nbsp;possuir&nbsp;1&nbsp;ponto&nbsp;ou&nbsp;menos,&nbsp;False&nbsp;se&nbsp;for&nbsp;um&nbsp;desenho&nbsp;válido.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.modelo.figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Retangulo">class <strong>Retangulo</strong></a>(<a href="projetopoo.modelo.figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Retangulo">Retangulo</a>(começo_x,&nbsp;começo_y,&nbsp;cor_borda,&nbsp;cor_preenchimento)<br>
+&nbsp;<br>
+Representa&nbsp;uma&nbsp;forma&nbsp;geométrica&nbsp;retangular&nbsp;bidimensional.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>
+@see&nbsp;<a href="#Figura">Figura</a><br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.modelo.figuras.html#Retangulo">Retangulo</a></dd>
+<dd><a href="projetopoo.modelo.figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Retangulo-desenhar"><strong>desenhar</strong></a>(self, canvas, rascunho=False)</dt><dd><span class="code">Renderiza&nbsp;o&nbsp;retângulo&nbsp;com&nbsp;borda&nbsp;e&nbsp;preenchimento&nbsp;especificados.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter.<br>
+@param&nbsp;rascunho:&nbsp;Define&nbsp;se&nbsp;o&nbsp;contorno&nbsp;temporário&nbsp;será&nbsp;tracejado.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="projetopoo.modelo.figuras.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Retangulo-__init__"><strong>__init__</strong></a>(self, começo_x, começo_y, cor_borda, cor_preenchimento)</dt><dd><span class="code">Construtor&nbsp;da&nbsp;classe&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;começo_x:&nbsp;Coordenada&nbsp;X&nbsp;inicial&nbsp;do&nbsp;ponto&nbsp;de&nbsp;partida.<br>
+@param&nbsp;começo_y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial&nbsp;do&nbsp;ponto&nbsp;de&nbsp;partida.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;de&nbsp;contorno&nbsp;da&nbsp;figura&nbsp;(padrão&nbsp;hexadecimal&nbsp;ou&nbsp;nome&nbsp;de&nbsp;cor).<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;interna&nbsp;de&nbsp;preenchimento&nbsp;(string&nbsp;vazia&nbsp;se&nbsp;transparente).</span></dd></dl>
+
+<dl><dt><a name="Retangulo-atualizar"><strong>atualizar</strong></a>(self, x, y)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;(ponto&nbsp;de&nbsp;destino)&nbsp;da&nbsp;figura&nbsp;durante&nbsp;o&nbsp;arrasto&nbsp;do&nbsp;mouse.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;do&nbsp;ponto&nbsp;final.<br>
+@param&nbsp;y:&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;do&nbsp;ponto&nbsp;final.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Retangulo-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;a&nbsp;figura&nbsp;possui&nbsp;dimensões&nbsp;nulas&nbsp;(ponto&nbsp;inicial&nbsp;idêntico&nbsp;ao&nbsp;final).<br>
+&nbsp;<br>
+@return:&nbsp;True&nbsp;se&nbsp;a&nbsp;figura&nbsp;estiver&nbsp;incompleta&nbsp;(tamanho&nbsp;zero),&nbsp;False&nbsp;caso&nbsp;contrário.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.modelo.figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

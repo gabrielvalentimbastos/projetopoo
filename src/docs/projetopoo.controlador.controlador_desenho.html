@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module projetopoo.controlador.controlador_desenho</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="projetopoo.html" class="white">projetopoo</a>.<a href="projetopoo.controlador.html" class="white">controlador</a>.controlador_desenho</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cgabri%5Cdocuments%5Cprojetopoo%5Cprojetopoo%5Csrc%5Cprojetopoo%5Ccontrolador%5Ccontrolador_desenho.py">c:\users\gabri\documents\projetopoo\projetopoo\src\projetopoo\controlador\controlador_desenho.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;controlador&nbsp;responsável&nbsp;por&nbsp;mediar&nbsp;a&nbsp;interação&nbsp;entre&nbsp;o&nbsp;Modelo&nbsp;de&nbsp;dados&nbsp;e&nbsp;a&nbsp;Interface&nbsp;gráfica.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>
+@since&nbsp;2026-07-13</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="tkinter.colorchooser.html">tkinter.colorchooser</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="projetopoo.controlador.controlador_desenho.html#ControladorDesenho">ControladorDesenho</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ControladorDesenho">class <strong>ControladorDesenho</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ControladorDesenho">ControladorDesenho</a>(modelo,&nbsp;visao)<br>
+&nbsp;<br>
+Classe&nbsp;controladora&nbsp;intermediária&nbsp;da&nbsp;arquitetura&nbsp;MVC.&nbsp;Traduz&nbsp;eventos&nbsp;de&nbsp;mouse&nbsp;e&nbsp;botões&nbsp;em&nbsp;manipulações&nbsp;no&nbsp;Modelo.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="ControladorDesenho-__init__"><strong>__init__</strong></a>(self, modelo, visao)</dt><dd><span class="code">Associa&nbsp;o&nbsp;controlador&nbsp;às&nbsp;instâncias&nbsp;do&nbsp;modelo&nbsp;e&nbsp;da&nbsp;visão,&nbsp;e&nbsp;inicializa&nbsp;as&nbsp;escutas&nbsp;de&nbsp;eventos&nbsp;gráficos.<br>
+&nbsp;<br>
+@param&nbsp;modelo:&nbsp;Instância&nbsp;ativa&nbsp;do&nbsp;gerenciador&nbsp;de&nbsp;dados&nbsp;de&nbsp;desenho.<br>
+@param&nbsp;visao:&nbsp;Instância&nbsp;correspondente&nbsp;ao&nbsp;layout&nbsp;de&nbsp;exibição&nbsp;na&nbsp;tela.</span></dd></dl>
+
+<dl><dt><a name="ControladorDesenho-abrir_desenho"><strong>abrir_desenho</strong></a>(self)</dt><dd><span class="code">Solicita&nbsp;ao&nbsp;usuário&nbsp;para&nbsp;abrir&nbsp;um&nbsp;desenho&nbsp;serializado&nbsp;e&nbsp;atualiza&nbsp;o&nbsp;Canvas&nbsp;gráfico.<br>
+&nbsp;<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ControladorDesenho-atualizar_figura_nova"><strong>atualizar_figura_nova</strong></a>(self, event)</dt><dd><span class="code">Atualiza&nbsp;o&nbsp;rascunho&nbsp;temporário&nbsp;do&nbsp;objeto&nbsp;geométrico&nbsp;enquanto&nbsp;o&nbsp;cursor&nbsp;está&nbsp;em&nbsp;movimento.<br>
+&nbsp;<br>
+@param&nbsp;event:&nbsp;Objeto&nbsp;de&nbsp;evento&nbsp;do&nbsp;movimento&nbsp;de&nbsp;arraste&nbsp;do&nbsp;mouse.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ControladorDesenho-escolher_cor_borda"><strong>escolher_cor_borda</strong></a>(self)</dt><dd><span class="code">Abre&nbsp;o&nbsp;seletor&nbsp;de&nbsp;cores&nbsp;nativo&nbsp;para&nbsp;definir&nbsp;a&nbsp;cor&nbsp;da&nbsp;borda&nbsp;das&nbsp;próximas&nbsp;formas.<br>
+&nbsp;<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ControladorDesenho-escolher_cor_preenchimento"><strong>escolher_cor_preenchimento</strong></a>(self)</dt><dd><span class="code">Abre&nbsp;o&nbsp;seletor&nbsp;de&nbsp;cores&nbsp;nativo&nbsp;para&nbsp;definir&nbsp;a&nbsp;cor&nbsp;de&nbsp;preenchimento&nbsp;interna&nbsp;das&nbsp;próximas&nbsp;formas.<br>
+&nbsp;<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ControladorDesenho-incluir_figura_nova"><strong>incluir_figura_nova</strong></a>(self, event)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;a&nbsp;forma&nbsp;desenhada&nbsp;é&nbsp;válida&nbsp;e&nbsp;inclui-a&nbsp;permanentemente&nbsp;no&nbsp;histórico&nbsp;de&nbsp;persistência.<br>
+&nbsp;<br>
+@param&nbsp;event:&nbsp;Objeto&nbsp;de&nbsp;evento&nbsp;que&nbsp;capturou&nbsp;o&nbsp;release&nbsp;do&nbsp;clique&nbsp;do&nbsp;mouse.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ControladorDesenho-iniciar_figura_nova"><strong>iniciar_figura_nova</strong></a>(self, event)</dt><dd><span class="code">Instancia&nbsp;uma&nbsp;nova&nbsp;figura&nbsp;geométrica&nbsp;no&nbsp;modelo&nbsp;dependendo&nbsp;da&nbsp;opção&nbsp;selecionada&nbsp;na&nbsp;interface.<br>
+&nbsp;<br>
+@param&nbsp;event:&nbsp;Objeto&nbsp;de&nbsp;evento&nbsp;de&nbsp;clique&nbsp;capturado&nbsp;pelo&nbsp;Tkinter&nbsp;contendo&nbsp;coordenadas&nbsp;X&nbsp;e&nbsp;Y.<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ControladorDesenho-salvar_desenho"><strong>salvar_desenho</strong></a>(self)</dt><dd><span class="code">Solicita&nbsp;um&nbsp;arquivo&nbsp;de&nbsp;destino&nbsp;e&nbsp;manda&nbsp;o&nbsp;modelo&nbsp;salvar&nbsp;as&nbsp;figuras&nbsp;persistidas.<br>
+&nbsp;<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ControladorDesenho-verificar_exibicao_poligono"><strong>verificar_exibicao_poligono</strong></a>(self, *args)</dt><dd><span class="code">Controla&nbsp;dinamicamente&nbsp;a&nbsp;exibição&nbsp;do&nbsp;menu&nbsp;de&nbsp;seleção&nbsp;do&nbsp;número&nbsp;de&nbsp;lados&nbsp;quando&nbsp;o&nbsp;polígono&nbsp;está&nbsp;ativo.<br>
+&nbsp;<br>
+@return:&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ControladorDesenho-vincular_eventos"><strong>vincular_eventos</strong></a>(self)</dt><dd><span class="code">Mapeia&nbsp;os&nbsp;eventos&nbsp;do&nbsp;Tkinter&nbsp;(cliques,&nbsp;movimentos,&nbsp;botões)&nbsp;para&nbsp;os&nbsp;métodos&nbsp;correspondentes&nbsp;do&nbsp;controlador.<br>
+&nbsp;<br>
+@return:&nbsp;None</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
