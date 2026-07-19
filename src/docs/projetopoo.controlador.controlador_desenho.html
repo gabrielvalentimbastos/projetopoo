@@ -32,7 +32,18 @@
 </dt><dd>
 <dl>
 <dt class="heading-text"><a href="projetopoo.controlador.controlador_desenho.html#ControladorDesenho">ControladorDesenho</a>
+</dt><dt class="heading-text"><a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="projetopoo.controlador.controlador_desenho.html#EstadoCirculo">EstadoCirculo</a>
+</dt><dt class="heading-text"><a href="projetopoo.controlador.controlador_desenho.html#EstadoLinha">EstadoLinha</a>
+</dt><dt class="heading-text"><a href="projetopoo.controlador.controlador_desenho.html#EstadoOval">EstadoOval</a>
+</dt><dt class="heading-text"><a href="projetopoo.controlador.controlador_desenho.html#EstadoPoligono">EstadoPoligono</a>
+</dt><dt class="heading-text"><a href="projetopoo.controlador.controlador_desenho.html#EstadoRabisco">EstadoRabisco</a>
+</dt><dt class="heading-text"><a href="projetopoo.controlador.controlador_desenho.html#EstadoRetangulo">EstadoRetangulo</a>
 </dt></dl>
+</dd>
+</dl>
 </dd>
 </dl>
  <p>
@@ -95,6 +106,230 @@ Classe&nbsp;controladora&nbsp;intermediária&nbsp;da&nbsp;arquitetura&nbsp;MVC.&
 
 <hr>
 Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoCirculo">class <strong>EstadoCirculo</strong></a>(<a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;a&nbsp;ferramenta&nbsp;Círculo.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoCirculo">EstadoCirculo</a></dd>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoCirculo-criar_figura"><strong>criar_figura</strong></a>(self, x, y, cor_borda, cor_preenchimento, controlador)</dt><dd><span class="code">Método&nbsp;abstrato&nbsp;para&nbsp;instanciar&nbsp;a&nbsp;figura&nbsp;correspondente&nbsp;ao&nbsp;estado&nbsp;atual.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;da&nbsp;borda&nbsp;selecionada.<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;de&nbsp;preenchimento&nbsp;selecionada.<br>
+@param&nbsp;controlador:&nbsp;Instância&nbsp;do&nbsp;controlador&nbsp;(permite&nbsp;acessar&nbsp;opções&nbsp;extras&nbsp;da&nbsp;visão).<br>
+@return:&nbsp;Instância&nbsp;da&nbsp;Figura&nbsp;recém-criada.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoDesenho">class <strong>EstadoDesenho</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Interface&nbsp;do&nbsp;padrão&nbsp;State&nbsp;que&nbsp;define&nbsp;o&nbsp;comportamento&nbsp;de&nbsp;criação&nbsp;de&nbsp;figuras.<br>
+&nbsp;<br>
+@author&nbsp;Gabriel&nbsp;Rocha&nbsp;Valentim&nbsp;Bastos&nbsp;e&nbsp;Luís&nbsp;Roberto&nbsp;Santana&nbsp;Santos<br>
+@version&nbsp;1.0.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="EstadoDesenho-criar_figura"><strong>criar_figura</strong></a>(self, x, y, cor_borda, cor_preenchimento, controlador)</dt><dd><span class="code">Método&nbsp;abstrato&nbsp;para&nbsp;instanciar&nbsp;a&nbsp;figura&nbsp;correspondente&nbsp;ao&nbsp;estado&nbsp;atual.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;da&nbsp;borda&nbsp;selecionada.<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;de&nbsp;preenchimento&nbsp;selecionada.<br>
+@param&nbsp;controlador:&nbsp;Instância&nbsp;do&nbsp;controlador&nbsp;(permite&nbsp;acessar&nbsp;opções&nbsp;extras&nbsp;da&nbsp;visão).<br>
+@return:&nbsp;Instância&nbsp;da&nbsp;Figura&nbsp;recém-criada.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoLinha">class <strong>EstadoLinha</strong></a>(<a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;a&nbsp;ferramenta&nbsp;Linha.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoLinha">EstadoLinha</a></dd>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoLinha-criar_figura"><strong>criar_figura</strong></a>(self, x, y, cor_borda, cor_preenchimento, controlador)</dt><dd><span class="code">Método&nbsp;abstrato&nbsp;para&nbsp;instanciar&nbsp;a&nbsp;figura&nbsp;correspondente&nbsp;ao&nbsp;estado&nbsp;atual.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;da&nbsp;borda&nbsp;selecionada.<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;de&nbsp;preenchimento&nbsp;selecionada.<br>
+@param&nbsp;controlador:&nbsp;Instância&nbsp;do&nbsp;controlador&nbsp;(permite&nbsp;acessar&nbsp;opções&nbsp;extras&nbsp;da&nbsp;visão).<br>
+@return:&nbsp;Instância&nbsp;da&nbsp;Figura&nbsp;recém-criada.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoOval">class <strong>EstadoOval</strong></a>(<a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;a&nbsp;ferramenta&nbsp;Oval.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoOval">EstadoOval</a></dd>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoOval-criar_figura"><strong>criar_figura</strong></a>(self, x, y, cor_borda, cor_preenchimento, controlador)</dt><dd><span class="code">Método&nbsp;abstrato&nbsp;para&nbsp;instanciar&nbsp;a&nbsp;figura&nbsp;correspondente&nbsp;ao&nbsp;estado&nbsp;atual.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;da&nbsp;borda&nbsp;selecionada.<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;de&nbsp;preenchimento&nbsp;selecionada.<br>
+@param&nbsp;controlador:&nbsp;Instância&nbsp;do&nbsp;controlador&nbsp;(permite&nbsp;acessar&nbsp;opções&nbsp;extras&nbsp;da&nbsp;visão).<br>
+@return:&nbsp;Instância&nbsp;da&nbsp;Figura&nbsp;recém-criada.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoPoligono">class <strong>EstadoPoligono</strong></a>(<a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;a&nbsp;ferramenta&nbsp;Polígono.<br>
+Resolve&nbsp;dinamicamente&nbsp;o&nbsp;número&nbsp;de&nbsp;lados&nbsp;usando&nbsp;um&nbsp;dicionário&nbsp;para&nbsp;evitar&nbsp;IFs.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoPoligono">EstadoPoligono</a></dd>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoPoligono-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="EstadoPoligono-criar_figura"><strong>criar_figura</strong></a>(self, x, y, cor_borda, cor_preenchimento, controlador)</dt><dd><span class="code">Método&nbsp;abstrato&nbsp;para&nbsp;instanciar&nbsp;a&nbsp;figura&nbsp;correspondente&nbsp;ao&nbsp;estado&nbsp;atual.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;da&nbsp;borda&nbsp;selecionada.<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;de&nbsp;preenchimento&nbsp;selecionada.<br>
+@param&nbsp;controlador:&nbsp;Instância&nbsp;do&nbsp;controlador&nbsp;(permite&nbsp;acessar&nbsp;opções&nbsp;extras&nbsp;da&nbsp;visão).<br>
+@return:&nbsp;Instância&nbsp;da&nbsp;Figura&nbsp;recém-criada.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoRabisco">class <strong>EstadoRabisco</strong></a>(<a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;a&nbsp;ferramenta&nbsp;Rabisco.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoRabisco">EstadoRabisco</a></dd>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoRabisco-criar_figura"><strong>criar_figura</strong></a>(self, x, y, cor_borda, cor_preenchimento, controlador)</dt><dd><span class="code">Método&nbsp;abstrato&nbsp;para&nbsp;instanciar&nbsp;a&nbsp;figura&nbsp;correspondente&nbsp;ao&nbsp;estado&nbsp;atual.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;da&nbsp;borda&nbsp;selecionada.<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;de&nbsp;preenchimento&nbsp;selecionada.<br>
+@param&nbsp;controlador:&nbsp;Instância&nbsp;do&nbsp;controlador&nbsp;(permite&nbsp;acessar&nbsp;opções&nbsp;extras&nbsp;da&nbsp;visão).<br>
+@return:&nbsp;Instância&nbsp;da&nbsp;Figura&nbsp;recém-criada.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoRetangulo">class <strong>EstadoRetangulo</strong></a>(<a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;a&nbsp;ferramenta&nbsp;Retângulo.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoRetangulo">EstadoRetangulo</a></dd>
+<dd><a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoRetangulo-criar_figura"><strong>criar_figura</strong></a>(self, x, y, cor_borda, cor_preenchimento, controlador)</dt><dd><span class="code">Método&nbsp;abstrato&nbsp;para&nbsp;instanciar&nbsp;a&nbsp;figura&nbsp;correspondente&nbsp;ao&nbsp;estado&nbsp;atual.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;cor_borda:&nbsp;Cor&nbsp;da&nbsp;borda&nbsp;selecionada.<br>
+@param&nbsp;cor_preenchimento:&nbsp;Cor&nbsp;de&nbsp;preenchimento&nbsp;selecionada.<br>
+@param&nbsp;controlador:&nbsp;Instância&nbsp;do&nbsp;controlador&nbsp;(permite&nbsp;acessar&nbsp;opções&nbsp;extras&nbsp;da&nbsp;visão).<br>
+@return:&nbsp;Instância&nbsp;da&nbsp;Figura&nbsp;recém-criada.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="projetopoo.controlador.controlador_desenho.html#EstadoDesenho">EstadoDesenho</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
 </dl>

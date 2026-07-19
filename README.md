@@ -22,9 +22,9 @@ O Paint da Shopee é uma aplicação construída utilizando programação orient
 
  Estatísticas da Documentação
 
- - Quantidade de Classes Documentadas: 10 classes públicas.
+ - Quantidade de Classes Documentadas: 17 classes públicas.
  
- - Quantidade de Métodos Documentados: 24 métodos públicos estruturados.
+ - Quantidade de Métodos Documentados: 25 métodos públicos estruturados.
 
 
 

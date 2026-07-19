@@ -7,7 +7,7 @@ Módulo controlador responsável por mediar a interação entre o Modelo de dado
 """
 
 from tkinter import colorchooser
-from modelo.figuras import Linha, Rabisco, Oval, Circulo, Retangulo, Poligono
+from projetopoo.modelo.figuras import Linha, Rabisco, Oval, Circulo, Retangulo, Poligono
 
 class EstadoDesenho:
     """
