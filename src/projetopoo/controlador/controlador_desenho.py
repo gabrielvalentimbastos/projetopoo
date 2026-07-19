@@ -7,6 +7,74 @@ Módulo controlador responsável por mediar a interação entre o Modelo de dado
 """
 
 from tkinter import colorchooser
+from modelo.figuras import Linha, Rabisco, Oval, Circulo, Retangulo, Poligono
+
+class EstadoDesenho:
+    """
+    Interface do padrão State que define o comportamento de criação de figuras.
+
+    @author Gabriel Rocha Valentim Bastos e Luís Roberto Santana Santos
+    @version 1.0.0
+    """
+    def criar_figura(self, x, y, cor_borda, cor_preenchimento, controlador):
+        """
+        Método abstrato para instanciar a figura correspondente ao estado atual.
+
+        @param x: Coordenada X inicial.
+        @param y: Coordenada Y inicial.
+        @param cor_borda: Cor da borda selecionada.
+        @param cor_preenchimento: Cor de preenchimento selecionada.
+        @param controlador: Instância do controlador (permite acessar opções extras da visão).
+        @return: Instância da Figura recém-criada.
+        """
+        pass
+
+class EstadoLinha(EstadoDesenho):
+    """Estado concreto para a ferramenta Linha."""
+    def criar_figura(self, x, y, cor_borda, cor_preenchimento, controlador):
+        return Linha(x, y, cor_borda, cor_preenchimento)
+
+class EstadoRabisco(EstadoDesenho):
+    """Estado concreto para a ferramenta Rabisco."""
+    def criar_figura(self, x, y, cor_borda, cor_preenchimento, controlador):
+        return Rabisco(x, y, cor_borda, cor_preenchimento)
+
+class EstadoOval(EstadoDesenho):
+    """Estado concreto para a ferramenta Oval."""
+    def criar_figura(self, x, y, cor_borda, cor_preenchimento, controlador):
+        return Oval(x, y, cor_borda, cor_preenchimento)
+
+class EstadoCirculo(EstadoDesenho):
+    """Estado concreto para a ferramenta Círculo."""
+    def criar_figura(self, x, y, cor_borda, cor_preenchimento, controlador):
+        return Circulo(x, y, cor_borda, cor_preenchimento)
+
+class EstadoRetangulo(EstadoDesenho):
+    """Estado concreto para a ferramenta Retângulo."""
+    def criar_figura(self, x, y, cor_borda, cor_preenchimento, controlador):
+        return Retangulo(x, y, cor_borda, cor_preenchimento)
+
+class EstadoPoligono(EstadoDesenho):
+    """
+    Estado concreto para a ferramenta Polígono.
+    Resolve dinamicamente o número de lados usando um dicionário para evitar IFs.
+    """
+    def __init__(self):
+        self.mapa_lados = {
+            'Triangulo': 3,
+            'Losango': 4,
+            'Pentagono': 5,
+            'Hexagono': 6
+        }
+        
+    def criar_figura(self, x, y, cor_borda, cor_preenchimento, controlador):
+        texto_lados = controlador.visao.lados_poligono_var.get()
+        lados = self.mapa_lados.get(texto_lados, 6) 
+        
+        figura = Poligono(x, y, cor_borda, cor_preenchimento)
+        figura.max_lados = lados
+        return figura
+    
 
 class ControladorDesenho:
     """
@@ -28,6 +96,17 @@ class ControladorDesenho:
         self.cor_borda_atual = 'black'
         self.cor_preenchimento_atual = ""
         
+        # Mapeia os estados disponíveis para eliminar condicionais na troca
+        self.estados = {
+            'Linha': EstadoLinha(),
+            'Rabisco': EstadoRabisco(),
+            'Oval': EstadoOval(),
+            'Circulo': EstadoCirculo(),
+            'Retangulo': EstadoRetangulo(),
+            'Poligono': EstadoPoligono()
+        }
+        self.estado_atual = self.estados['Linha']
+
         self.vincular_eventos()
 
     def vincular_eventos(self):
@@ -53,7 +132,11 @@ class ControladorDesenho:
 
         @return: None
         """
-        if self.visao.tipo_figura_var.get() == 'Poligono':
+        tipo = self.visao.tipo_figura_var.get()
+        # Atualiza o Estado atual baseando-se no dicionário, sem usar if/else
+        self.estado_atual = self.estados.get(tipo, self.estados['Linha'])
+
+        if tipo == 'Poligono':
             self.visao.menu_lados.grid(column=1, row=1, sticky='w', padx=5, pady=5)
         else:
             self.visao.menu_lados.grid_forget()
@@ -85,32 +168,12 @@ class ControladorDesenho:
         @param event: Objeto de evento de clique capturado pelo Tkinter contendo coordenadas X e Y.
         @return: None
         """
-        from modelo.figuras import Linha, Rabisco, Oval, Circulo, Retangulo, Poligono
-        x, y = event.x, event.y
-        tipo = self.visao.tipo_figura_var.get()
-
-        if tipo == 'Linha':
-            self.modelo.figura_nova = Linha(x, y, self.cor_borda_atual, self.cor_preenchimento_atual)
-        elif tipo == 'Oval':
-            self.modelo.figura_nova = Oval(x, y, self.cor_borda_atual, self.cor_preenchimento_atual)
-        elif tipo == 'Circulo':
-            self.modelo.figura_nova = Circulo(x, y, self.cor_borda_atual, self.cor_preenchimento_atual)
-        elif tipo == 'Retangulo':
-            self.modelo.figura_nova = Retangulo(x, y, self.cor_borda_atual, self.cor_preenchimento_atual)
-        elif tipo == 'Poligono':
-            texto_lados = self.visao.lados_poligono_var.get()
-            if 'Triangulo' in texto_lados:
-                lados = 3
-            elif 'Losango' in texto_lados:
-                lados = 4
-            elif 'Pentagono' in texto_lados:
-                lados = 5
-            else:
-                lados = 6
-            self.modelo.figura_nova = Poligono(x, y, self.cor_borda_atual, self.cor_preenchimento_atual)
-            self.modelo.figura_nova.max_lados = lados
-        else:
-            self.modelo.figura_nova = Rabisco(x, y, self.cor_borda_atual, self.cor_preenchimento_atual)
+        self.modelo.figura_nova = self.estado_atual.criar_figura(
+            event.x, event.y, 
+            self.cor_borda_atual, 
+            self.cor_preenchimento_atual, 
+            self
+        )
 
     def atualizar_figura_nova(self, event):
         """
