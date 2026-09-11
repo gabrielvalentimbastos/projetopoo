@@ -1,10 +1,10 @@
-Paint da Shopee
+Paint 2
 
 
 
 Equipe
 
-Nome da Equipe: Paint Da Shopee
+Nome da Equipe: Paint 2
 
 Integrantes:
 
