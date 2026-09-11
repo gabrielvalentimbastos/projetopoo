@@ -16,7 +16,7 @@ Integrantes:
 
  Descrição do Sistema
 
-O Paint da Shopee é uma aplicação construída utilizando programação orientada a objetos com Python e a biblioteca Tkinter. O software adota estritamente o padrão MVC (Model View Controller) para separar as responsabilidades do domínio da aplicação, permitindo criar, selecionar cores de borda e preenchimento, renderizar diferentes formas geométricas (linhas, elipses, retângulos, círculos e polígonos regulares editáveis) e realizar a persistência em disco de desenhos criados através das opções Salvar e Abrir arquivos customizados.
+O Paint 2 é uma aplicação construída utilizando programação orientada a objetos com Python e a biblioteca Tkinter. O software adota estritamente o padrão MVC (Model View Controller) para separar as responsabilidades do domínio da aplicação, permitindo criar, selecionar cores de borda e preenchimento, renderizar diferentes formas geométricas (linhas, elipses, retângulos, círculos e polígonos regulares editáveis) e realizar a persistência em disco de desenhos criados através das opções Salvar e Abrir arquivos customizados.
 
 
 
